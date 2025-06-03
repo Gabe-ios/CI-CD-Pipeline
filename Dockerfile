@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginxinc/nginx-unprivileged:stable-alpine
 COPY . /usr/share/nginx/html
 EXPOSE 80
 
