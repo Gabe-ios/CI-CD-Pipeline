@@ -1,4 +1,8 @@
 FROM nginxinc/nginx-unprivileged:stable-alpine
+
+USER root
 COPY . /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+RUN chown -R nginx:nginx /usr/share/nginx/html
+USER nginx
+
+EXPOSE 8080
